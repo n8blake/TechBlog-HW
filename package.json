@@ -1,0 +1,24 @@
+{
+  "name": "techblog-hw",
+  "version": "1.0.0",
+  "description": "A simple blog for posting tech articles.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n8blake/TechBlog-HW.git"
+  },
+  "keywords": [
+    "blog",
+    "tech",
+    "writing"
+  ],
+  "author": "n8blake",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/n8blake/TechBlog-HW/issues"
+  },
+  "homepage": "https://github.com/n8blake/TechBlog-HW#readme"
+}
