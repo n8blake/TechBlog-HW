@@ -1,0 +1,26 @@
+{{#each articles as |article| }}
+<div class="article-container mb-4">
+	
+	<div class="card">
+		<div class="card-header">
+			<a class="h2" href="/article/{{article.article_id}}">{{article.title}}</a>
+		</div>
+		<div class="card-body">
+			<div class="container-fluid">
+				<div class="row">
+					<p class="col">{{article.content}}</p>
+					<small>{{article.user.user_name}}</small>
+				</div>
+
+				{{#each article.comments as |comment|}}
+				<hr>
+				<div>
+					<p>{{comment.comment}}</p>
+					<small>{{comment.user.user_name}}</small>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</div>
+{{/each}}

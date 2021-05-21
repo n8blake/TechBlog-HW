@@ -1,0 +1,50 @@
+<div class="article-container mb-4">
+	
+	{{#if users_article}}
+	<br><br>
+	<h3>Article: </h3>
+	<br>
+	<form id="update-form">
+		<input type="text" style="display: none;" id="article_id" name="article" value="{{article.article_id}}" disabled="true">
+		<div class="mb-3">
+			<label for="title" class="form-label">Title</label>
+			<input type="text" class="form-control" id="title" name="title" value="{{article.title}}">
+		</div>
+		<div class="mb-3">
+			<label for="content" class="form-label">Content <small class="text-secondary">(required)</small></label>
+			<textarea class="form-control" id="content" rows="5" name="content">{{article.content}}</textarea>
+		</div>
+
+	</form>
+	<script src="/js/update.js"></script>
+	{{else}}
+	<div class="card">
+		<div class="card-header">
+			<h2>{{article.title}}</h2>
+		</div>
+		<div class="card-body">
+			<div class="container-fluid">
+				<div class="row">
+					<p>{{article.content}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/if}}
+	{{#if logged_in}}
+	<hr>
+	<form>
+		<div class="mb-3">
+			<label for="comment" class="form-label">Comment: ></label>
+			<textarea class="form-control" id="comment" rows="5" name="comment"></textarea>
+		</div>
+	</form>
+	{{/if}}
+	{{#each article.comments as |comment|}}
+	<hr>
+		<div>
+			<p>{{comment.comment}}</p>
+			<small>{{comment.user.user_name}}</small>
+		</div>
+	{{/each}}
+</div>
