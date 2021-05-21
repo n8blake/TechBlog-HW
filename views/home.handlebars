@@ -1,3 +1,9 @@
+{{#if logged_in}}
+<div class="d-flex justify-content-center">
+	<button class="btn btn-sm btn-primary"><i class="bi bi-pen"></i> new post</button>
+</div>
+<hr>
+{{/if}}
 {{#each articles as |article| }}
 <div class="article-container mb-4">
 	
@@ -11,16 +17,28 @@
 					<p class="col">{{article.content}}</p>
 					<small>{{article.user.user_name}}</small>
 				</div>
-
-				{{#each article.comments as |comment|}}
 				<hr>
+				<div class="badge border border-primary chat-badge mb-4"><i class="bi bi-chat-right-text"></i> {{article.comments.length}}</div>
+				<div class="article-comments" id="article-{{article.article_id}}-comments" display="hidden">
+				{{#each article.comments as |comment|}}
+				
 				<div>
 					<p>{{comment.comment}}</p>
-					<small>{{comment.user.user_name}}</small>
+					<div class="d-flex justify-content-between">
+						<small>{{comment.user.user_name}}</small>
+						{{#if comment.user.users_comment}}
+						<button class="btn">
+							<i class="bi bi-trash"></i>
+						</button>
+						{{/if}}
+					</div>
 				</div>
+				<hr>
 				{{/each}}
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
 {{/each}}
+<script src="/js/comment.js"></script>

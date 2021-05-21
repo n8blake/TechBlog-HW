@@ -10351,13 +10351,19 @@ textarea.form-control-lg {
   color: #6B595D;
 }
 
-a {
+a, .chat-badge {
   color: #5E1F2A;
   text-decoration: none;
 }
 
 a:hover {
   color: #6B595D;
+}
+
+.chat-badge:hover {
+  cursor: pointer;
+  color: #EEE;
+  background-color: #5E1F2A;
 }
 
 i.bi-trash {

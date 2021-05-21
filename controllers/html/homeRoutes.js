@@ -38,6 +38,17 @@ router.get('/', async (request, response) => {
 		const articlesData = await Article.findAll(articleQueryConfig);
 		const articles = articlesData.map((article) => article.get({ plain: true }));
 		//console.log(listings);
+		if(articles){
+			articles.forEach(article => {
+				if(article.comments){
+					article.comments.forEach(comment => {
+						if(comment.user.user_name == request.session.user_name){
+							comment.user.users_comment = true;
+						}
+					});
+				}
+			});
+		}
 		response.render('home', {
 			articles,
 			logged_in: request.session.logged_in,

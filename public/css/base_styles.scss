@@ -22,13 +22,20 @@ $theme-colors: (
 	color: map-get($theme-colors, "secondary");
 }
 
-a {
+a, .chat-badge {
 	color: map-get($theme-colors, "primary");
 	text-decoration: none;
 }
 
-a:hover {
+a:hover, {
 	color: map-get($theme-colors, "secondary");
+	
+}
+
+.chat-badge:hover {
+	cursor: pointer;
+	color: #EEE;
+	background-color: map-get($theme-colors, "primary");
 }
 
 i.bi-trash {
@@ -38,3 +45,4 @@ i.bi-trash {
 i.bi-trash:hover {
 	color: map-get($theme-colors, "danger");
 }
+
