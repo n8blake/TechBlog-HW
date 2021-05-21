@@ -10360,4 +10360,12 @@ a:hover {
   color: #6B595D;
 }
 
+i.bi-trash {
+  color: #6B595D;
+}
+
+i.bi-trash:hover {
+  color: #AD2100;
+}
+
 /*# sourceMappingURL=base_styles.css.map */

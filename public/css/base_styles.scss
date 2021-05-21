@@ -30,3 +30,11 @@ a {
 a:hover {
 	color: map-get($theme-colors, "secondary");
 }
+
+i.bi-trash {
+	color: map-get($theme-colors, "secondary");
+}
+
+i.bi-trash:hover {
+	color: map-get($theme-colors, "danger");
+}

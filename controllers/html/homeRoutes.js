@@ -40,8 +40,8 @@ router.get('/', async (request, response) => {
 		//console.log(listings);
 		response.render('home', {
 			articles,
-			//logged_in: request.session.logged_in,
-			//user_name: request.session.user_name
+			logged_in: request.session.logged_in,
+			user_name: request.session.user_name
 		});
 
 	} catch (error) {

@@ -44,10 +44,15 @@ router.get('/:id', async(request, response) => {
 			});
 			const article = articleData.get({plain: true});
 			
-			//console.log(listing);
-			//const listing = listingData.map((listing) => listing.get({ plain: true }));
-			//const this_user = await (listing.user.user_id == request.session.user_id);
-			//console.log(this_user);
+
+			if(article.comments){
+				article.comments.forEach(comment => {
+					if(comment.user.user_name == request.session.user_name){
+						comment.user.users_comment = true;
+					}
+				});
+			}
+
 			const users_article = (article.user.user_id == request.session.user_id);
 			if(article){
 				response.render('article', {
