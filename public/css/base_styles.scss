@@ -1,0 +1,79 @@
+$theme-colors: (
+	"primary": #5E1F2A,
+	"danger":#AD2100,
+	"warning":#EDA006,
+	"secondary":#6B595D
+);
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+@import url("https://use.typekit.net/uax2nly.css");
+
+body {
+	font-family: usual, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+	color: map-get($theme-colors, "primary");
+}
+
+p {
+	font-weight: 300;
+}
+
+small {
+	color: map-get($theme-colors, "secondary");
+}
+
+.form-control:focus {
+	border-color: #5E1F2A;
+	box-shadow: 0 0 2px #5E1F2A;
+}
+
+.header {
+	margin: 20pt 40pt;
+}
+
+.header>div>a {
+	text-decoration: none;
+	color: map-get($theme-colors, "primary");
+}
+
+.header>div>a:hover {
+	//color: #DDD;
+	color: map-get($theme-colors, "secondary");
+}
+
+a, .chat-badge {
+	color: map-get($theme-colors, "primary");
+	text-decoration: none;
+}
+
+a:hover, {
+	color: map-get($theme-colors, "secondary");
+	
+}
+
+.chat-badge:hover {
+	cursor: pointer;
+	color: #EEE;
+	background-color: map-get($theme-colors, "primary");
+}
+
+i.bi-trash {
+	color: map-get($theme-colors, "secondary");
+}
+
+i.bi-trash:hover {
+	color: map-get($theme-colors, "danger");
+}
+
+.icon-45 {
+    transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+}
+
+

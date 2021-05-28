@@ -1,0 +1,19 @@
+<div class="article-container mb-4">
+	<br><br>
+	<h3>New Article: </h3>
+	<br>
+	<form id="new-form">
+		<div class="mb-3">
+			<label for="title" class="form-label">Title <small class="text-secondary">(required)</small></label>
+			<input type="text" class="form-control" id="title" name="title" value="{{article.title}}">
+		</div>
+		<div class="mb-3">
+			<label for="content" class="form-label">Content <small class="text-secondary">(required)</small></label>
+			<textarea class="form-control" id="content" rows="5" name="content">{{article.content}}</textarea>
+		</div>
+		<div class="d-flex justify-content-end">
+			<button class="btn btn-primary" type="submit">Submit</button>
+		</div>
+	</form>
+	<script src="/js/new.js"></script>
+</div>

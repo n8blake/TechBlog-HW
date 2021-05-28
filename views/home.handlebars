@@ -1,0 +1,45 @@
+{{#if logged_in}}
+<div class="d-flex justify-content-center">
+	<a class="btn btn-sm btn-primary" href="/article/new/"><i class="bi bi-pen"></i> new post</a>
+</div>
+<hr>
+{{/if}}
+{{#each articles as |article| }}
+<div class="article-container mb-4">
+	
+	<div class="card">
+		<div class="card-header">
+			<a class="h2" href="/article/{{article.article_id}}">{{article.title}}</a>
+		</div>
+		<div class="card-body">
+			<div class="container-fluid">
+				<div class="row">
+					<p class="col">{{article.content}}</p>
+					<small>{{article.user.user_name}}</small>
+				</div>
+				{{#if article.comments}}
+				<hr>
+				<div class="badge border border-primary chat-badge mb-4" onclick="showHideComments({{article.article_id}})"><i class="bi bi-chat-right-text"></i> {{article.comments.length}}</div>
+				<div class="article-comments" id="article-{{article.article_id}}-comments" style="display: none" >
+				{{#each article.comments as |comment|}}
+				
+				<div>
+					<p>{{comment.comment}}</p>
+					<div class="d-flex justify-content-between">
+						<small>{{comment.user.user_name}}</small>
+						{{#if comment.user.users_comment}}
+						<button class="btn" onclick="deleteComment({{comment.comment_id}})">
+							<i class="bi bi-trash"></i>
+						</button>
+						{{/if}}
+					</div>
+				</div>
+				<hr>
+				{{/each}}
+				</div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</div>
+{{/each}}

@@ -1,0 +1,70 @@
+<div class="article-container mb-4">
+	
+	{{#if users_article}}
+	<br><br>
+	<h3>Article: </h3>
+	<br>
+	<form id="update-form">
+		<input type="text" style="display: none;" id="article_id" name="article" value="{{article.article_id}}" disabled="true">
+		<div class="mb-3">
+			<label for="title" class="form-label">Title</label>
+			<input type="text" class="form-control" id="title" name="title" value="{{article.title}}">
+		</div>
+		<div class="mb-3">
+			<label for="content" class="form-label">Content <small class="text-secondary">(required)</small></label>
+			<textarea class="form-control" id="content" rows="5" name="content">{{article.content}}</textarea>
+		</div>
+		<div class="d-flex justify-content-end">
+			<button id="delete-article-btn" class="btn btn-outline-danger mx-2">Delete Article</button>
+			<button id="update-article-btn" class="btn btn-outline-warning">Update Article</button>
+		</div>
+	</form>
+	<script src="/js/update.js"></script>
+	{{else}}
+	<div class="card">
+		<div class="card-header">
+			<h2>{{article.title}}</h2>
+		</div>
+		<div class="card-body">
+			<div class="container-fluid">
+				<div class="row">
+					<p>{{article.content}}</p>
+				</div>
+				<div>
+				<small>{{article.user.user_name}}</small>
+			</div>
+			</div>
+
+		</div>
+	</div>
+	{{/if}}
+	{{#if logged_in}}
+	<hr>
+	<form id="comment-form">
+		<input type="text" style="display: none;" id="comment_article_id" name="article_id" value="{{article.article_id}}" disabled="true">
+		<div class="mb-3">
+			<label for="comment" class="form-label"><i class="bi bi-chat-left-text"></i> Comment</label>
+			<textarea class="form-control" id="comment" rows="5" name="comment"></textarea>
+		</div>
+		<div class="d-flex justify-content-between">
+			<div> </div>
+		<button class="btn btn-primary" type="submit">submit</button>
+		</div>
+	</form>
+	<script type="text/javascript" src="/js/comment.js"></script>
+	{{/if}}
+	{{#each article.comments as |comment|}}
+	<hr>
+		<div>
+			<p>{{comment.comment}}</p>
+			<div class="d-flex justify-content-between">
+			<small>{{comment.user.user_name}}</small>
+			{{#if comment.user.users_comment}}
+			<button class="btn" onclick="deleteComment({{comment.comment_id}})">
+				<i class="bi bi-trash"></i>
+			</button>
+			{{/if}}
+			</div>
+		</div>
+	{{/each}}
+</div>
