@@ -40,7 +40,8 @@
 	{{/if}}
 	{{#if logged_in}}
 	<hr>
-	<form>
+	<form id="comment-form">
+		<input type="text" style="display: none;" id="comment_article_id" name="article_id" value="{{article.article_id}}" disabled="true">
 		<div class="mb-3">
 			<label for="comment" class="form-label"><i class="bi bi-chat-left-text"></i> Comment</label>
 			<textarea class="form-control" id="comment" rows="5" name="comment"></textarea>
@@ -50,6 +51,7 @@
 		<button class="btn btn-primary" type="submit">submit</button>
 		</div>
 	</form>
+	<script type="text/javascript" src="/js/comment.js"></script>
 	{{/if}}
 	{{#each article.comments as |comment|}}
 	<hr>

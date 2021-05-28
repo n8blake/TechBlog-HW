@@ -84,7 +84,7 @@ router.put('/:id', withAuth, async (request, response) => {
 			if(success) {
 				response.status(200).json(success);
 			} else {
-				response.status(410).json(success);
+				response.status(400).json(success);
 			}
 		})
 	} catch (error) {
