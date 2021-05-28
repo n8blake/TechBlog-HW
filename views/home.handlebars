@@ -1,6 +1,6 @@
 {{#if logged_in}}
 <div class="d-flex justify-content-center">
-	<button class="btn btn-sm btn-primary"><i class="bi bi-pen"></i> new post</button>
+	<a class="btn btn-sm btn-primary" href="/article/new/"><i class="bi bi-pen"></i> new post</a>
 </div>
 <hr>
 {{/if}}
@@ -17,9 +17,10 @@
 					<p class="col">{{article.content}}</p>
 					<small>{{article.user.user_name}}</small>
 				</div>
+				{{#if article.comments}}
 				<hr>
-				<div class="badge border border-primary chat-badge mb-4"><i class="bi bi-chat-right-text"></i> {{article.comments.length}}</div>
-				<div class="article-comments" id="article-{{article.article_id}}-comments" display="hidden">
+				<div class="badge border border-primary chat-badge mb-4" onclick="showHideComments({{article.article_id}})"><i class="bi bi-chat-right-text"></i> {{article.comments.length}}</div>
+				<div class="article-comments" id="article-{{article.article_id}}-comments" style="display: none" >
 				{{#each article.comments as |comment|}}
 				
 				<div>
@@ -36,9 +37,9 @@
 				<hr>
 				{{/each}}
 				</div>
+				{{/if}}
 			</div>
 		</div>
 	</div>
 </div>
 {{/each}}
-<script src="/js/comment.js"></script>

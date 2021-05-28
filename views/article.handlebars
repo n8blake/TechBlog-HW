@@ -14,7 +14,10 @@
 			<label for="content" class="form-label">Content <small class="text-secondary">(required)</small></label>
 			<textarea class="form-control" id="content" rows="5" name="content">{{article.content}}</textarea>
 		</div>
-
+		<div class="d-flex justify-content-end">
+			<button id="delete-article-btn" class="btn btn-outline-danger mx-2">Delete Article</button>
+			<button id="update-article-btn" class="btn btn-outline-warning">Update Article</button>
+		</div>
 	</form>
 	<script src="/js/update.js"></script>
 	{{else}}

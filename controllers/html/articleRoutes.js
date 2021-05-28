@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Article, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 const articleQueryConfig = {
 		attributes: [ 
@@ -35,6 +36,20 @@ const articleQueryConfig = {
 		order: [['created_at', 'ASC']]
 	};
 
+router.get('/new', withAuth, async(request, response) => {
+	try {
+		response.render('newArticle', {
+			user_id: request.session.user_id,
+			user_name: request.session.user_name,
+			logged_in: request.session.logged_in
+		})
+	} catch (error) {
+		console.error(error);
+		response.status(500).json(error);
+	}
+});
+
+
 router.get('/:id', async(request, response) => {
 	try {
 		// get a listinging by its id
@@ -43,7 +58,6 @@ router.get('/:id', async(request, response) => {
 				response.json(error);
 			});
 			const article = articleData.get({plain: true});
-			
 
 			if(article.comments){
 				article.comments.forEach(comment => {

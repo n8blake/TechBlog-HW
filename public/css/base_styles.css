@@ -6,6 +6,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+@import url("https://use.typekit.net/uax2nly.css");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -10338,6 +10339,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  font-family: usual, sans-serif;
+  font-weight: 300;
+  font-style: lighter;
+}
+
 .header {
   margin: 20pt 40pt;
 }
