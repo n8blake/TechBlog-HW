@@ -33,7 +33,7 @@ const updateFormHandler = async (event) => {
 	
 };
 
-const deleteListingHandler = async(event) => {
+const deleteArticleHandler = async(event) => {
 	event.preventDefault(); 
 	const article_id = document.querySelector('#article_id').value.trim();
 	// prompt to confirm
@@ -49,9 +49,9 @@ const deleteListingHandler = async(event) => {
 	if(response.ok){
 		document.location.replace('/');
 	} else {
-		alert('Failed to delete listing');
+		alert('Failed to delete article');
 	}
 };
 
 document.querySelector('#update-form').addEventListener('submit', updateFormHandler);
-document.querySelector('#delete-article-btn').addEventListener('click', deleteListingHandler);
+document.querySelector('#delete-article-btn').addEventListener('click', deleteArticleHandler);
