@@ -1,8 +1,14 @@
-$theme-colors: (
+/*
 	"primary": #5E1F2A,
 	"danger":#AD2100,
 	"warning":#EDA006,
 	"secondary":#6B595D
+*/
+$theme-colors: (
+	"primary": #842438,
+	"danger":#C63B20,
+	"warning":#E8A838,
+	"secondary":#70545C
 );
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
@@ -11,6 +17,8 @@ $theme-colors: (
 
 body {
 	font-family: usual, sans-serif;
+	background-color: #000;
+	color: #CCC;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,9 +34,24 @@ small {
 	color: map-get($theme-colors, "secondary");
 }
 
+hr {
+	border-top: 1pt solid;
+	border-color: map-get($theme-colors, "secondary");}
+
+.card, .form-control {
+	background-color: #0F0608;
+}
+
+.form-control {
+	border-color: #2B1016;
+	color: #CCC;
+}
+
 .form-control:focus {
+	color: #CCC;
+	background-color: #2B1016;
 	border-color: #5E1F2A;
-	box-shadow: 0 0 2px #5E1F2A;
+	box-shadow: 0 0 5px #5E1F2A;
 }
 
 .header {
@@ -70,10 +93,9 @@ i.bi-trash:hover {
 }
 
 .icon-45 {
-    transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
 }
-
 

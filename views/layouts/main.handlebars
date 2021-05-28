@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tech Blog</title>
-	<link rel="stylesheet" href="/css/base_styles.css">
+	<link id="page-styles" rel="stylesheet" href="/css/base_styles_dark.css">
 	<!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
@@ -20,9 +20,12 @@
 		{{#if logged_in}}
 			<small class="text-secondary mx-2">Logged in as {{user_name}}</small>
 			<button class="btn btn-sm btn-outline-secondary" id="logout" >logout</button>
+			
+
 		{{else}}
 			<button class="btn btn-sm btn-outline-secondary" id="login" data-bs-toggle="modal" data-bs-target="#staticBackdrop">login to post</button>
 		{{/if}}
+		<a class="btn btn-sm icon-45" id="appearance-mode-button" ><i class="bi bi-circle-half"></i></a>
 		</div>
 	</div>
 	<main class="container mt-4">
@@ -86,6 +89,7 @@
 	{{else}}
 	<script src="/js/login.js"></script>
 	{{/if}}
+	<script src="/js/styleManager.js"></script>
 </body>
 
 </html>
