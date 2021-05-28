@@ -17,7 +17,7 @@ clone the repo, install the dependances, configure your MySQL server in ```confi
 ## Usage Information
 Once the database and server are up and running, you can run ```npm run seed``` to build the required tables and add some test data. The blog is fairly straigt forward, common blog usage. You must log in or create a user to post a new article or comment on an article. The app also support light mode and dark mode. It will first look for a system prefered mode, and then if overridden, it will save the choice in LocalStorage.
 
-<img src="/demos/screen_1.PNG" width="256"/>
+<img src="/demos/screen_1.PNG" width="256" style="float: right; margin-right: 20pt;" />
 <img src="/demos/screen_2.PNG" width="512"/>
 
 ## Contribution Guidelines
