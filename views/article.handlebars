@@ -60,7 +60,7 @@
 			<div class="d-flex justify-content-between">
 			<small>{{comment.user.user_name}}</small>
 			{{#if comment.user.users_comment}}
-			<button class="btn">
+			<button class="btn" onclick="deleteComment({{comment.comment_id}})">
 				<i class="bi bi-trash"></i>
 			</button>
 			{{/if}}

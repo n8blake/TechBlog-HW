@@ -19,6 +19,7 @@ const articleQueryConfig = {
 			},
 			{ model: Comment ,
 				attributes: [ 
+					'comment_id',
 					'comment',
 					'created_at',
 					'updated_at'
